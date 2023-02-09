@@ -46,18 +46,18 @@ content-type: application/json
       {
         "dateStart": "15/01/2023",
         "team": [
-          "Team Assignment 1",
-          "Team Assignment 2",
-          "Team Assignment 3",
-          "Team Assignment 4"
+          "Team Assignment 5",
+          "Team Assignment 6",
+          "Team Assignment 7",
+          "Team Assignment 8"
         ]
       }
     ],
     "announcements": [
       {
         "title": "Week6",
-        "body": "You can fix bugs and error handle",
-        "date": "20/01/2023",
+        "body": "Fix data validation and error handling",
+        "date": "10/02/2023",
         "images": [
           "https://google.com/programming_nodejs"
         ]
@@ -158,34 +158,34 @@ content-type: application/json
       {
         "dateStart": "15/01/2023",
         "team": [
-          "Team Assignment 1",
-          "Team Assignment 2",
-          "Team Assignment 3",
-          "Team Assignment 4"
+          "Team Assignment 5",
+          "Team Assignment 6",
+          "Team Assignment 7",
+          "Team Assignment 8"
         ]
       }
     ],
     "announcements": [
       {
         "title": "Week6",
-        "body": "You can fix bugs and error handle",
-        "date": "20/01/2023",
+        "body": "Fix data validation and error handling",
+        "date": "10/02/2023",
         "images": [
           "https://google.com/programming_nodejs"
         ]
       },
        {
         "title": "Week7",
-        "body": "Continuation fix bugs and error",
-        "date": "1/02/2023",
+        "body": "Fix login credential",
+        "date": "15/02/2023",
         "images": [
           "https://google.com/nodejs"
         ]
       },
       {
         "title": "Week8",
-        "body": "Please submit your assignment.",
-        "date": "13/02/2023",
+        "body": "Please get ready to submit your assignment.",
+        "date": "19/02/2023",
         "images": [
           "https://google.com/express_nodejs"
         ]
