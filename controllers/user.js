@@ -113,7 +113,7 @@ module.exports.deleteUser = async (req, res, next) => {
     }
     User.deleteOne({ username: username }, function (err, result) {
       if (err) {
-        res.status(500).json(err || '˜Error occurred while deleting.');
+        res.status(500).json(err || 'Error occurred while deleting.');
       } else {
         res.status(204).send(result);
       }
