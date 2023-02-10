@@ -2,7 +2,7 @@ const db = require('../models');
 const User = db.user;
 const passwordUtil = require('../utils/passwordComplexityCheck');
 
-module.exports.create = (req, res) => {
+module.exports.create = (req, res, next) => {
   try {
     if (!req.body.username || !req.body.password) {
       res.status(400).send({ message: 'Can not be empty!' });
@@ -28,14 +28,17 @@ module.exports.create = (req, res) => {
       });
   } catch (err) {
     res.status(500).json(err);
+    next(err);
   }
 };
 
-module.exports.getAll = (req, res) => {
+module.exports.getAll = (req, res, next) => {
   try {
     User.find({})
       .then((data) => {
-        res.status(200).send(data);
+        if (data[0] == null) res.status(404).send({ message: 'Not found or Empty.'});
+        else res.status(200).send(data);
+        // res.status(200).send(data);
       })
       .catch((err) => {
         res.status(500).send({
@@ -44,15 +47,17 @@ module.exports.getAll = (req, res) => {
       });
   } catch (err) {
     res.status(500).json(err);
+    next(err);
   }
 };
 
-module.exports.getUser = (req, res) => {
+module.exports.getUser = (req, res, next) => {
   try {
     const username = req.params.username;
     User.find({ username: username })
       .then((data) => {
-        res.status(200).send(data);
+        if (data[0] == null) res.status(404).send({ message: 'Not found.'});
+        else res.status(200).send(data);
       })
       .catch((err) => {
         res.status(500).send({
@@ -61,10 +66,11 @@ module.exports.getUser = (req, res) => {
       });
   } catch (err) {
     res.status(500).json(err);
+    next(err);
   }
 };
 
-module.exports.updateUser = async (req, res) => {
+module.exports.updateUser = async (req, res, next) => {
   try {
     const username = req.params.username;
     if (!username) {
@@ -94,10 +100,11 @@ module.exports.updateUser = async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    next(err);
   }
 };
 
-module.exports.deleteUser = async (req, res) => {
+module.exports.deleteUser = async (req, res, next) => {
   try {
     const username = req.params.username;
     if (!username) {
@@ -113,5 +120,6 @@ module.exports.deleteUser = async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err || 'Error occurred while deleting.');
+    next(err);
   }
 };
