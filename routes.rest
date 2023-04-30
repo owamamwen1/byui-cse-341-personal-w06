@@ -4,9 +4,9 @@
 
 GET http://localhost:8080/user
 
-### GET user by id 
+### GET user by id s
 
-GET http://localhost:8080/user/Luca
+GET http://localhost:8080/user/Luc
 
 ### Create new user 
 
